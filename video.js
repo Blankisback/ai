@@ -7,6 +7,7 @@ const ctx1 = c1.getContext('2d');
 var cameraAvailable = false;
 var aiEnabled = false;
 var fps = 16;
+var animationFrameId; // Added this line
 
 /* Setting up the constraint */
 var facingMode = "environment"; // Can be 'user' or 'environment' to access back or front camera (NEAT!)
@@ -21,7 +22,7 @@ var constraints = {
 camera();
 function camera() {
     if (!cameraAvailable) {
-        console.log("camera")
+        console.log("camera");
         navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
             cameraAvailable = true;
             video.srcObject = stream;
@@ -49,7 +50,7 @@ function timerCallback() {
             ai();
         }
     }
-    setTimeout(timerCallback, fps);
+    animationFrameId = requestAnimationFrame(timerCallback); // Modified this line
 }
 
 function isReady() {
@@ -103,3 +104,4 @@ function ai() {
         }
     });
 }
+

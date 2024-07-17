@@ -7,10 +7,10 @@ const ctx1 = c1.getContext('2d');
 var cameraAvailable = false;
 var aiEnabled = false;
 var fps = 16;
-var animationFrameId; // Added this line
+var animationFrameId; 
 
-/* Setting up the constraint */
-var facingMode = "environment"; // Can be 'user' or 'environment' to access back or front camera (NEAT!)
+
+var facingMode = "environment";
 var constraints = {
     audio: false,
     video: {
@@ -18,7 +18,7 @@ var constraints = {
     }
 };
 
-/* Stream it to video element */
+
 camera();
 function camera() {
     if (!cameraAvailable) {
@@ -50,7 +50,7 @@ function timerCallback() {
             ai();
         }
     }
-    animationFrameId = requestAnimationFrame(timerCallback); // Modified this line
+    animationFrameId = requestAnimationFrame(timerCallback); 
 }
 
 function isReady() {
@@ -88,9 +88,9 @@ function changeFps() {
 }
 
 function ai() {
-    // Detect objects in the image element
+
     objectDetector.detect(c1, (err, results) => {
-        console.log(results); // Will output bounding boxes of detected objects
+        console.log(results); 
         for (let index = 0; index < results.length; index++) {
             const element = results[index];
             ctx1.font = "15px Arial";

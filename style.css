@@ -1,18 +1,19 @@
 body {
-    text-align: center;
+    text-align:center;
 }
 
 video {
     width: 0px;
-    height: 0px;
+    length: 0px;
 }
 
-table {
+table{
     width: auto;
     margin: auto;
 }
 
-tr, td {
+tr,
+td {
     border: 0px;
-    text-align: center; 
+    text-align: center;
 }

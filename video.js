@@ -30,7 +30,7 @@ function camera() {
             cameraAvailable = false;
             if (modelIsLoaded) {
                 if (err.name === "NotAllowedError") {
-                    document.getElementById("loadingText").innerText = "Waiting for camera permission";
+                    document.getElementById("loadingText").innerText = "No Cam perm";
                 }
             }
             setTimeout(camera, 1000);
